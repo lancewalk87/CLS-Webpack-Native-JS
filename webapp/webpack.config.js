@@ -1,3 +1,9 @@
+// Lance Walker 
+// Webpack Config 
+// July 14, 2016
+// 
+//
+
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
