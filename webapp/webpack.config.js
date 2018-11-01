@@ -1,6 +1,6 @@
 // Lance Walker 
 // Webpack Config 
-// July 14, 2016
+// July 14, 2017
 // 
 //
 
