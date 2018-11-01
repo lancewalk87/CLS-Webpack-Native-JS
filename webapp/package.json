@@ -1,0 +1,32 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack -w",
+    "server": "serve dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simply Coding",
+  "private": true,
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "mustache-loader": "^1.0.0",
+    "resolve-url-loader": "^2.1.0",
+    "serve": "^6.0.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "badwords-list": "^1.0.0",
+    "es6-promise": "^4.1.1",
+    "framework7": "^1.6.4",
+    "framework7-icons": "^0.8.9",
+    "uniq": "^1.0.1"
+  }
+}

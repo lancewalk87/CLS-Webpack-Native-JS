@@ -1,0 +1,1 @@
+INSERT INTO backend.posts (type, content, userId, createdAt, updatedAt) VALUES ('live_stream', 'This is a test live stream event', 2, '2017-07-20 19:32:54', '2017-07-20 21:00:30');

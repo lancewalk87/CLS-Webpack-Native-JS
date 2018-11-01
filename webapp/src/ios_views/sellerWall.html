@@ -1,0 +1,326 @@
+<body>
+<div class="page layout-dark" data-page="sellerWall"> <!-- InitPage -->
+<div class="navbar navbar-fixed"> <!-- Navigation Bar -->
+  <div class="navbar-inner theme-white">
+    <div class="left">
+      <h2>Shopter</h2><p>____</p>
+    </div>
+    <div class="right">
+      <a href="#" style="color: white;" id="logout-btn" class="color-red">Log Out</a><p>____</p>
+    </div>
+
+    <style>
+      /* Navigation Style */
+      .navbar-inner {
+        background-color: #42c5f4;
+      }
+      .navbar-inner p {
+        color: transparent;
+      }
+      #logout-btn {
+        border-radius: 5px;
+        background-color: red;
+        width: 5em;
+        height: 100%;
+        text-align:center;
+      }
+    </style>
+  </div>
+</div> <!-- End Navigation Bar -->
+<div class="tabs-swipeable-wrap"><div class="tabs layout-dark"> <!-- Page Content -->
+  <div id="userWall" class="page-content tab"> <!-- Tab: UserWall -->
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-cover"> <!-- Connections Directory -->
+      <div class="content-block">
+        <div class="WallPageNavBar">
+          <div class="content-block">
+            <h1>Shopter Wall</h1>
+            <a href="#" id="signedUserWall">Your Wall</a>
+            <hr>
+            <div id="generalHeader">
+              <p><i class="f7-icons" style="color=#888">person_fill</i>Your Connections:</p>
+            </div>
+            <div class="followingTable">
+              <ul id="followingList"><li><a href="#" class="button" id="wall-btn">Jane Seller</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End Connection Directory -->
+
+    <div class="wallContent"> <!-- Main Wall Content -->
+      <!-- <div id="sidePanelIndicator"><a href="#" class="open-panel"><i class="f7-icons" style="font-size:70px;color=#888">arrow_right_fill</i></a></div> -->
+
+      <div class="content-block"><div id="wallHeader"> <!-- Wall Header -->
+        <h1 id="wallHeaderTitle">Wall Name</h1>
+        <i class="f7-icons" style="font-size:70px;color=#888" id="userImg">person_fill</i>
+
+        <div id="followerTag" style="width:20%; display: inline-block; vertical-align:top; margin-left:1pt;">
+          <div style="font-size: 28px; text-align:center;" id="wallFollowerNumber">0</div>
+          <div style="font-size: 14px; text-align:center;color:#888">Followers</div>
+        </div>
+
+        <div id="postTag" style="width:20%; display: inline-block; vertical-align:top; margin-left:1pt;">
+          <div style="font-size: 28px; text-align:center;" id="wallPostNumber">0</div>
+          <div style="font-size: 14px; text-align:center;color:#888">Posts</div>
+        </div>
+
+        <div id="postTag" style="width:30%; display: inline-block; vertical-align:top; margin-left:1pt; float: right;">
+          <a href="#" style="width: 95%; height: 45%;" id="create-stream" class="button button-fill color-green">Post</a><br>
+        </div>
+      </div></div> <!-- End Wall Header -->
+
+      <div><div class="buttons-row" id="feedButtons"> <!-- Feed Tabs -->
+        <a href="#c-feed" id="toolButton1" class="tab-link active button">Current Feed</a>
+        <a href="#r-feed" id="toolButton2" class="tab-link button">Recent Feed</a>
+      </div></div> <!-- End Feed Tabs -->
+
+      <div class="tabs" id="tabContainers"> <!-- Feed Content -->
+        <div id="c-feed" class="tab active"> <!-- Current Activity/LiveStream Creation -->
+          <div class="list-block">
+            <ul id="cFeedList"><li>
+              <div id="postBlock">
+                <!-- <h1>Huge Sale!</h1>
+                <p>Selling lots of good stuff.</p>
+                <a href="#" class="button button-fill button-big color-green" id="join-stream">Join Stream</a><br>
+                <textarea id="post-cmt" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Write a comment!</textarea> -->
+              </div>
+            </li>
+            <li>
+              <center>
+              <div id="stream-form">
+                <div>Content Title:</div>
+                <input type="text" name="title" id="title" style="background-color: #808080;"></input>
+                <div>Content Description:</div>
+                <textarea id="description" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" style="background-color: #808080;">Description</textarea>
+                <div>
+                  <div style="float: left">Type</div>
+                  <select name="contentType" id="type" style="right: 100%">
+                    <option value="liveStream">LiveStream</option>
+                    <option value="video">Video</option>
+                  </select>
+                <div>
+                <p id="settings-errors">#error</p><br>
+                <div class="submisssion-controls">
+                  <a href="#" id="cancel-stream" class="button button-fill button-big color-red">Cancel</a><br>
+                  <a href="#" id="begin-stream" class="button button-fill button-big color-blue">Begin Stream</a>
+                </div>
+                </center>
+              </div>
+            </li></ul>
+          </div>
+
+          <style>
+            #cFeedList {
+              top: 35%;
+              width: 95%;
+              left: 2.5%;
+              position: absolute;
+            }
+
+            #cFeedList li {
+              background-color: black;
+            }
+
+            #postBlock {
+
+            }
+
+            #post-cmt {
+              background-color:rgba(255, 255, 255, 0.5);
+              height: 90%;
+            }
+          </style>
+
+        <div id="r-feed" class="tab"> <!-- Recent Activity/Video Creation -->
+          <div class="list-block">
+            <ul id="rFeedList"></ul>
+          </div>
+        </div> <!-- End Recent Activity -->
+      </div> <!-- End Feed Content -->
+    <style>
+      /* User Wall Style */
+      .userWall {
+      }
+
+      .followingList {
+        list-style: none;
+      }
+
+      /* NavBar Elements */
+      .WallPageNavBar {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        height: 85%;
+        position: absolute;
+        overflow: auto;
+        border-right: 2px solid white;
+      }
+      .WallPageNavBar ul {
+        list-style: none;
+        float: left;
+        padding-right: 20px;
+      }
+      .WallPageNavBar ul li {
+        border-bottom: 1px solid white;
+        width: 100%;
+      }
+      .WallPageNavBar ul li a {
+        font-size: 20px;
+       }
+      .WallPageNavBar h1 {
+        font-size: 20px;
+        text-decoration: underline;
+      }
+      .WallPageNavBar p {
+        font-size: 20px;
+        padding-right: 20px;
+      }
+      .WallPageNavBar i {
+        padding-right: 1px;
+      }
+        /* End NavBar Elements */
+      .wallContent {
+
+      }
+
+      .wallContent #sidePanelIndicator {
+        position: absolute;
+        top: 80%; left: -2.5%;
+      }
+
+      .wallContent #wallHeader {
+        float: left;
+        width: 100%;
+        top: 1%;
+        font-size: 15pt;
+        border-bottom: 3px solid white;
+        display: inline-block;
+        position: absolute;
+        padding-bottom: 5px;
+      }
+
+      .wallContent #feedButtons {
+        width: 90%; left: 5%;
+        top: 30%;
+        position: absolute;
+
+      }
+      /* Post Style */
+      .wallContent p {
+        font-size: 15px;
+      }
+      .wallContent ul {
+        list-style: none;
+      }
+      .wallContent ul li div {
+        background-color: black;
+        height: 30%; height: 25%;
+        border-radius: 15px;
+      }
+      /* End Post Style */
+    </style>
+
+  </div> <!-- End Main Wall Content -->
+</div> <!-- End Tab: UserWall -->
+
+<div id="userInfo" class="page-content tab"> <!-- Tab: userInfo -->
+  <div class="content-block"><br> <!-- User Info Header -->
+     <h1 id="profile-name">User_Name</h1>
+      <p id="profile-role">User_Role</p>
+      <i class="f7-icons" style="font-size:68px;color=#888">person_fill</i>
+      <div style="width:20%; display: inline-block; vertical-align:top; margin-left:1em;">
+        <div style="font-size: 28px; text-align:center;" id="postNumber">0</div>
+        <div style="font-size: 14px; text-align:center;color:#888">posts</div>
+      </div>
+
+      <a href="#" id="following-btn"><div style="width:20%; display: inline-block; vertical-align:top; margin-left:.5em;">
+        <div style="font-size: 28px; text-align:center;" id="followingNumber">0</div>
+        <div style="font-size: 14px; text-align:center; color:#888;">Following</div>
+      </div></a>
+
+      <a href="#" id="follower-btn"><div style="width:20%; display: inline-block; vertical-align:top; margin-left:.5em;">
+        <div style="font-size: 28px; text-align:center;" id="followersNumber">0</div>
+        <div style="font-size: 14px; text-align:center; color:#888">Followers</div>
+      </div></a>
+
+      <a class="link popover-open" href="#" data-popover=".popover-links"><div style="width:20%; display: inline-block; vertical-align:top; margin-left:.5em;">
+        <div style="font-size: 28px; text-align:center;"><i class="f7-icons">add_round</i></div>
+        <div style="font-size: 14px; text-align:center; color:#888">Create New</div>
+      </a>
+      </div></a>
+    </div><hr> <!-- End User Info Header -->
+
+    <form class="searchbar" id="connection-search"> <!-- Connection SearchBar -->
+      <div class="searchbar-input">
+        <input type="search" placeholder="search"><a href="#" class="searchbar-clear"></a></input>
+      </div>
+        <a href="#" class="searchbar-cancel">Cancel</a>
+    </form> <!-- End Connection SearchBar -->
+
+    <div class="connection-table"> <!-- Shopter Users Table -->
+      <h2 id="user_title">Users</h2>
+      <ul id="userList"></ul>
+    </div> <!-- End Shopter Users Table -->
+  </div></div>
+  <style>
+    /* User Info Style */
+    .connection-table ul {
+        list-style-type: none;
+        padding-right: 15px;
+      }
+
+      .connection-table ul li {
+        height: 30px;
+        border-bottom: 2px solid white;
+      }
+
+      .connection-table ul li a {
+        float: right;
+        padding-left: 10px;
+      }
+
+      .connection-table ul li i {
+        padding-left: 10px;
+      }
+
+      #connections {
+        padding-top: 0em;
+        padding-bottom: 0em;
+      }
+
+      #add-btn {
+
+      }
+
+      #connectTable {
+        background-color: gray;
+        border-radius: 10px;
+        padding-bottom: 20em;
+        padding-top: 0em;
+      }
+
+      #connectTab {
+        background-color: black;
+        display: block;
+        height: 10%;
+        border-radius: 5px;
+        padding-bottom: 2px;
+      }
+
+      #connect-btn {
+        float: right;
+      }
+
+      #table-label {
+        font-size: 25pt;
+        color: black;
+        text-decoration: underline;
+      }
+      /* End User Info Style */
+  </style>
+</div> <!-- End Tab: userInfo -->
+</div> <!-- End Page Content -->
+</div> <!-- End Page -->
+</body>

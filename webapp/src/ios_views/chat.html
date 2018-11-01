@@ -1,0 +1,103 @@
+<html>
+<head><title>ChatView</title></head>
+<body style="background-color:rgba(255, 255, 255, 0.5); border-top: 5px solid black;"> <!-- Body -->
+  <div class="style=100vw;height:100vh;box-sizing: border-box; display: flex;"
+id="chat-display"> <!-- Chat Display Container (Out) -->
+    <!-- Chat Display View -->
+    <div id="chat-messages-view">
+      <style>
+      /* Main Chat Style */
+        #chat-messages-view {
+          left: 0%;
+          width:100%;height:100%;overflow-y:auto;
+          border-right: 5px black solid;
+        }
+
+        #chat-messages-view p {
+          border-bottom: 1px black solid;
+        }
+      </style>
+    </div>
+    <!-- End Chat Display View -->
+
+    <!-- Custom Chat Selection View -->
+    <div id="custom-chat-view">
+      <div id="saleBlockDemoDisplay">
+        <div id="blockHeader">
+          <h1 id="blockTitle">#SaleBlock<br>
+            <p id="blockPrice">#price</p><p id="blockCap">#inven</p>
+          </h1>
+        </div>
+
+        <div id="blockOptions">
+          <label for="blockSel1">#sel1:</label>
+          <select id="blockSel1"></select><br>
+          <label for="blockSel2">#sel2:</label>
+          <select id="blockSel2"></select><br>
+          <label for="blockSel3">#sel3:</label>
+          <select id="blockSel3"></select><br>
+        </div>
+
+        <div id="blockImg">
+          <img id="blockImg"></img>
+        </div>
+      </div>
+      <style>
+      /* Custom Block Display */
+        /* Display Header */
+        #blockHeader {
+          text-align: center;
+        }
+
+        #blockHeader p {
+          margin:0; padding:0;
+          margin-left: 5px;
+          display: inline-block;
+          font-size: 20px;
+        }
+        /* End Display Header */
+
+        /* Block Options */
+        #blockOptions {
+          border-right: 2px solid black;
+        }
+        /* End Block Options */
+      /* End Custom Block Display */
+      </style>
+    </div> <!-- End Custom Chat Selection -->
+
+  </div> <!-- End Chat Display Container (Out) -->
+
+  <div class="list-block" id="chat-messages-control" style="width:100%;height:3.0em; position:fixed;bottom:0px;background:grey;padding-top:2px;"><ul>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">chat</i></div>
+          <div class="item-inner">
+          <div class="item-input">
+            <input type="text" id="chat-box"/>
+          </div>
+          </div>
+        </div>
+      </li>
+      <a href="#" class="button button-fill color-green" id="chat-send-btn" style="width: 50%; height:100%; float: left;">Post Comment</a>
+      <a href="#" class="button button-fill color-blue" id="customChat-create" style="width: 50%; height:100%; float: right;">Custom Post</a>
+    </ul>
+  </div>
+
+  <div class="list-block" id="custom-chat-control" style="width:100%;height:3.0em; position:fixed;bottom:0px;background:grey;padding-top:2px;"><ul>
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+          <div class="item-title label">Sale Blocks</div>
+          <div class="item-input">
+            <select><option>1</option><option>2</option></select>
+          </div>
+          </div>
+        </div>
+      </li>
+      <a href="#" class="button button-fill color-green" id="customChat-post" style="width: 50%; height:100%; float: left;">Publish</a>
+      <a href="#" class="button button-fill color-red" id="customChat-cancel" style="width: 50%; height:100%; float: right;">Cancel</a>
+    </ul>
+  </div>
+</body> <!-- End Body -->
+</html>
